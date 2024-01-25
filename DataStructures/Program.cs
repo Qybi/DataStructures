@@ -6,7 +6,7 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            QueueTest(10);
+            BinaryTreeTest();
         }
 
         static void LinkedListTest()
@@ -76,7 +76,24 @@ namespace DataStructures
             queue.Remove();
             queue.Remove();
             queue.PrintQueue();
+        }
+        static void BinaryTreeTest()
+        {
+            BinaryTree tree = new BinaryTree();
+            tree.Head = new BTNode(1);
+            tree.Head.Left = new BTNode(2);
+            tree.Head.Right = new BTNode(3);
+            tree.Head.Left.Left = new BTNode(4);
+            tree.Head.Left.Right = new BTNode(5);
+            tree.Head.Right.Left = new BTNode(6);
+            tree.Head.Right.Right = new BTNode(7);
 
+            Console.WriteLine();
+            tree.InorderTraversing(tree.Head);
+            Console.WriteLine();
+            tree.PreorderTraversing(tree.Head);
+            Console.WriteLine();
+            tree.PostorderTraversing(tree.Head);
         }
     }
 }

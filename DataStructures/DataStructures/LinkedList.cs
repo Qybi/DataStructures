@@ -9,25 +9,25 @@ namespace DataStructures.DataStructures
 {
     internal class LinkedList
     {
-        public Node head;
+        public LLNode head;
         public void InsertNode(int data)
         {
             if (head == null)
             {
-                head = new Node() { data = data, next = null };
+                head = new LLNode() { data = data, next = null };
                 return;
             }
-            Node temp = head;
+            LLNode temp = head;
             while (temp.next != null)
             {
                 temp = temp.next;
             }
-            temp.next = new Node() { data = data, next = null };
+            temp.next = new LLNode() { data = data, next = null };
         }
         public void PrintList()
         {
             int counter = 0;
-            Node temp = new Node() { data = head.data, next = head.next };
+            LLNode temp = new LLNode() { data = head.data, next = head.next };
             while (temp != null)
             {
                 Console.WriteLine($"Node {counter} has value {temp.data}");
@@ -37,8 +37,8 @@ namespace DataStructures.DataStructures
         }
         public void DeleteNode(int position)
         {
-            Node temp1 = head;
-            Node temp2 = null;
+            LLNode temp1 = head;
+            LLNode temp2 = null;
             int length = 0;
 
             // check if list is empty
@@ -84,9 +84,9 @@ namespace DataStructures.DataStructures
         }
     }
 
-    internal class Node
+    internal class LLNode
     {
         public int data;
-        public Node? next;
+        public LLNode? next;
     }
 }
