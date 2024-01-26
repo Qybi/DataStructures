@@ -6,9 +6,10 @@ namespace DataStructures
     {
         static void Main(string[] args)
         {
-            BinaryTreeTest();
+            BSTTest();
         }
 
+        #region linear data structures tests
         static void LinkedListTest()
         {
             LinkedList list = new LinkedList();
@@ -77,16 +78,18 @@ namespace DataStructures
             queue.Remove();
             queue.PrintQueue();
         }
+        #endregion
+        #region non linear data structures tests
         static void BinaryTreeTest()
         {
             BinaryTree tree = new BinaryTree();
             tree.Head = new BTNode(1);
-            tree.Head.Left = new BTNode(2);
-            tree.Head.Right = new BTNode(3);
-            tree.Head.Left.Left = new BTNode(4);
-            tree.Head.Left.Right = new BTNode(5);
-            tree.Head.Right.Left = new BTNode(6);
-            tree.Head.Right.Right = new BTNode(7);
+            tree.Head.left = new BTNode(2);
+            tree.Head.right = new BTNode(3);
+            tree.Head.left.left = new BTNode(4);
+            tree.Head.left.right = new BTNode(5);
+            tree.Head.right.left = new BTNode(6);
+            tree.Head.right.right = new BTNode(7);
 
             Console.WriteLine();
             tree.InorderTraversing(tree.Head);
@@ -95,5 +98,19 @@ namespace DataStructures
             Console.WriteLine();
             tree.PostorderTraversing(tree.Head);
         }
+        static void BSTTest()
+        {
+            var bst = new BinarySearchTree(50);
+            bst.Insert(60);
+            bst.Insert(70);
+            bst.Insert(30);
+            bst.Insert(40);
+            bst.Insert(55);
+                
+            bst.InorderTraversing(bst.root);
+
+            Console.WriteLine(bst.Search(bst.root, 56)?.ToString());
+        }
+        #endregion
     }
 }
